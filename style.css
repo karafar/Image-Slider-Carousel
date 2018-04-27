@@ -1,0 +1,46 @@
+* {margin: 0;padding: 0;}
+
+.slider-container {
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.slider-container,
+.slider-container .slides .slide img {
+    /* Dimensions of image and container. */
+    height: 360px;
+    /* i.e. this width! */
+    width: 640px;
+}
+
+.slider-container .slides {
+    display: block;
+    /* Important, width times the # of images being displayed! See above! */
+    /* This allows the images to be displayed on a single line, so that the margin trick works!*/
+    width: calc(640px * 4);
+    /* Should match the height of the container. */
+    height: 360px;
+    list-style-type: none;
+}
+
+/* Forces the images to stay on the same line if width allows.*/
+.slider-container .slides .slide {
+    float: left;
+}
+
+/* Places each arrow in the center of the container.
+    The margin allows the midpoint of the leftside to be centered
+    instead of the top left corner.*/
+.left-arrow, .right-arrow {
+    font-size: 50px;
+    color: black;
+    position: absolute;
+    top: 50%;
+    margin-top: -25px;
+}
+
+/* Left arrow goes on left side
+    Right arrow goes on right side.*/
+.left-arrow {left: 0;}
+.right-arrow {right: 0;}
